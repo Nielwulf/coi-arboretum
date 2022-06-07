@@ -3,6 +3,7 @@ using Mafi;
 using Mafi.Base;
 using Mafi.Core;
 using Mafi.Core.Mods;
+using Arboretum.ArboretumBuilding;
 
 namespace Arboretum {
 	public sealed class MyMod : DataOnlyMod {
@@ -20,6 +21,8 @@ namespace Arboretum {
 
 		public override void RegisterPrototypes(ProtoRegistrator registrator) {
 			// Register all prototypes here.
+			// TODO: Create Arboretum asset.
+			registrator.RegisterData<ArboretumData>();
 
 			// Registers all products from this assembly. See MyIds.Products.cs for examples.
 			registrator.RegisterAllProducts();
@@ -29,9 +32,6 @@ namespace Arboretum {
 
 			// Registers all research from this assembly. See ExampleResearchData.cs for examples.
 			registrator.RegisterDataWithInterface<IResearchNodesData>();
-
-			// TODO: Add Greenhouse buildings.
-			//registrator.RegisterData<ArboretumBuildingData>();
 		}
 
 	}
